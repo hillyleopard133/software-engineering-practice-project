@@ -67,4 +67,23 @@ public class Module {
     public void setDateCompleted(LocalDate dateCompleted) {
         this.dateCompleted = dateCompleted;
     }
+
+    public String listAllLecturers() {
+        String list = "";
+        for (String lecturer : lecturers) {
+            list += lecturer + ", ";
+        }
+        return list;
+    }
+
+    public String listAllGrades() {
+        String list = "";
+        int count = 0;
+        // TODO complete method.
+        return list;
+    }
+
+    public String toString() {
+        return "---------------------------------------\n" + "Module Name: " + getName() + "\nLecturers: " + listAllLecturers() + "\n" ;
+    }
 }
