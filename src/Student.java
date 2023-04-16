@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class Student {
 
     // Fields.
@@ -22,12 +25,29 @@ public class Student {
             }
         return -1;
     }
-
     public String getAllGrades(){
         String allGrades = "";
         for (Module module: modules) {
             allGrades += module.toString();
         }
         return allGrades;
+    }
+    public String sortGradesLowest() {
+        ArrayList<Module> moduleList = new ArrayList<>();
+        for (Module module: modules) {
+            moduleList.add(module);
+        }
+        moduleList.sort((a,b)->a.getDateCompleted().compareTo(b.getDateCompleted()));
+        modules = (Module[]) moduleList.toArray();
+        return getAllGrades();
+    }
+    public String sortGradesHighest() {
+        ArrayList<Module> moduleList = new ArrayList<>();
+        for (Module module: modules) {
+            moduleList.add(module);
+        }
+        moduleList.sort((a,b)->b.getDateCompleted().compareTo(a.getDateCompleted()));
+        modules = (Module[]) moduleList.toArray();
+        return getAllGrades();
     }
 }
