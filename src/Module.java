@@ -77,13 +77,17 @@ public class Module {
     }
 
     public String listAllGrades() {
-        String list = "";
+        String list = "********************************\n";
         int count = 0;
-        // TODO complete method.
+        for (String assignment: assignments){
+            list += "Assignment: " + assignment + "\n Grade: " + grades[count] + "\n";
+            count++;
+        }
+        list+="***********************************";
         return list;
     }
 
     public String toString() {
-        return "---------------------------------------\n" + "Module Name: " + getName() + "\nLecturers: " + listAllLecturers() + "\n" ;
+        return "---------------------------------------\n" +"Date completed: " + dateCompleted + "\nModule Name: " + getName() + "\nLecturers: " + listAllLecturers() + "\n" + listAllGrades() + "--------------------------------------" ;
     }
 }

@@ -25,10 +25,9 @@ public class Student {
 
     public String getAllGrades(){
         String allGrades = "";
-//        for (Module module: modules) {
-//
-//        }
-        // TODO complete method.
+        for (Module module: modules) {
+            allGrades += module.toString();
+        }
         return allGrades;
     }
 }
