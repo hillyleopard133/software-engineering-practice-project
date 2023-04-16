@@ -16,11 +16,19 @@ public class Student {
         int count = 0;
         if (getModule(moduleName) != null)
             for (String assignment1: getModule(moduleName).getAssignments()) {
-                count++;
                 if (assignment.equals(assignment1))
                     return getModule(moduleName).getGrades()[count];
+                count++;
             }
         return -1;
     }
 
+    public String getAllGrades(){
+        String allGrades = "";
+//        for (Module module: modules) {
+//
+//        }
+        // TODO complete method.
+        return allGrades;
+    }
 }
