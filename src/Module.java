@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.Arrays;
 
 public class Module {
 
@@ -88,6 +89,6 @@ public class Module {
     }
 
     public String toString() {
-        return "---------------------------------------\n" +"Date completed: " + dateCompleted + "\nModule Name: " + getName() + "\nLecturers: " + listAllLecturers() + "\n" + listAllGrades() + "--------------------------------------" ;
+        return "---------------------------------------\n" +"Date completed: " + dateCompleted + "\nModule Name: " + getName() + "\nModule code:"+ getCode() + "\nLecturers: " + listAllLecturers() + "\n" + listAllGrades() + "--------------------------------------" ;
     }
 }

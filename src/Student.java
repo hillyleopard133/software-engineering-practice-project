@@ -1,7 +1,8 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
-public class Student {
+public class Student{
 
     // Fields.
     private String name="";
@@ -46,7 +47,7 @@ public class Student {
         for (Module module: modules) {
             moduleList.add(module);
         }
-        moduleList.sort((a,b)->b.getDateCompleted().compareTo(a.getDateCompleted()));
+        moduleList.sort((b,a)->a.getDateCompleted().compareTo(b.getDateCompleted()));
         modules = (Module[]) moduleList.toArray();
         return getAllGrades();
     }
