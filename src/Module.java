@@ -91,4 +91,23 @@ public class Module {
     public String toString() {
         return "---------------------------------------\n" +"Date completed: " + dateCompleted + "\nModule Name: " + getName() + "\nModule code:"+ getCode() + "\nLecturers: " + listAllLecturers() + "\n" + listAllGrades() + "--------------------------------------" ;
     }
+
+    public String findAssignment(String assignmentName){
+        String str = "";
+        for (String assignment: assignments)
+            if (assignment.contains(assignmentName))
+                str+=assignment;
+        return str;
+    }
+
+    public String findGrade(String assignmentName){
+        String str = "";
+        int count = 0;
+        for (String assignment:assignments) {
+            if (assignment.contains(assignmentName))
+                str+=grades[count];
+            count++;
+        }
+        return str;
+    }
 }
