@@ -68,20 +68,37 @@ public class Student{
     }
     public String sortGradesLowest() {
         ArrayList<Module> moduleList = new ArrayList<>();
+        Collections.addAll(moduleList, modules);
         for (Module module: modules) {
             moduleList.add(module);
         }
-        moduleList.sort((a,b)->a.getDateCompleted().compareTo(b.getDateCompleted()));
-        modules = (Module[]) moduleList.toArray();
+        for (Module moduleL : moduleList) {
+            ArrayList<Integer> grades = new ArrayList<>();
+            for (int grade : moduleL.getGrades()) {
+                grades.add(grade);
+            }
+            Collections.sort(grades);
+            moduleL.setGrades(grades.stream().mapToInt(i->i).toArray());
+        }
+        modules = moduleList.toArray(new Module[moduleList.size()]);
         return getAllGrades();
     }
     public String sortGradesHighest() {
         ArrayList<Module> moduleList = new ArrayList<>();
+        Collections.addAll(moduleList, modules);
         for (Module module: modules) {
             moduleList.add(module);
         }
-        moduleList.sort((b,a)->a.getDateCompleted().compareTo(b.getDateCompleted()));
-        modules = (Module[]) moduleList.toArray();
+        for (Module moduleL : moduleList) {
+            ArrayList<Integer> grades = new ArrayList<>();
+            for (int grade : moduleL.getGrades()) {
+                grades.add(grade);
+            }
+            Collections.sort(grades);
+            Collections.reverse(grades);
+            moduleL.setGrades(grades.stream().mapToInt(i->i).toArray());
+        }
+        modules = moduleList.toArray(new Module[moduleList.size()]);
         return getAllGrades();
     }
 }
