@@ -9,6 +9,39 @@ public class Student{
     private int id;
     private String course;
     private Module[] modules;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getCourse() {
+        return course;
+    }
+
+    public void setCourse(String course) {
+        this.course = course;
+    }
+
+    public Module[] getModules() {
+        return modules;
+    }
+
+    public void setModules(Module[] modules) {
+        this.modules = modules;
+    }
+
     public Module getModule(String moduleName) {
         for (Module module: modules){
             if (module.getName().equals(moduleName))
