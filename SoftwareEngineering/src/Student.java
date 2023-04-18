@@ -17,6 +17,10 @@ public class Student {
         this.studentID = studentID;
         this.course = course;
     }
+    
+    public Student(){
+    }
+        
 
     // Methods
 
