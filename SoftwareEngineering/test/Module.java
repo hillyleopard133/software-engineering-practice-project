@@ -11,6 +11,50 @@ public class Module {
     private int code;
     private Student student;
     private LocalDate dateCompleted;
+    
+    //Methods
+    
+    public String listAllLecturers() {
+        String list = "";
+        for (String lecturer : lecturers) {
+            list += lecturer + ", ";
+        }
+        return list;
+    }
+
+    public String listAllGrades() {
+        String list = "********************************\n";
+        int count = 0;
+        for (String assignment: assignments){
+            list += "Assignment: " + assignment + "\n Grade: " + grades[count] + "\n";
+            count++;
+        }
+        list+="***********************************";
+        return list;
+    }
+
+    public String toString() {
+        return "---------------------------------------\n" +"Date completed: " + dateCompleted + "\nModule Name: " + getName() + "\nModule code:"+ getCode() + "\nLecturers: " + listAllLecturers() + "\n" + listAllGrades() + "--------------------------------------" ;
+    }
+
+    public String findAssignment(String assignmentName){
+        String str = "";
+        for (String assignment: assignments)
+            if (assignment.contains(assignmentName))
+                str+=assignment;
+        return str;
+    }
+
+    public String findGrade(String assignmentName){
+        String str = "";
+        int count = 0;
+        for (String assignment:assignments) {
+            if (assignment.contains(assignmentName))
+                str+=grades[count];
+            count++;
+        }
+        return str;
+    }
 
     // Getters and Setters.
     public String getName() {
@@ -67,47 +111,5 @@ public class Module {
 
     public void setDateCompleted(LocalDate dateCompleted) {
         this.dateCompleted = dateCompleted;
-    }
-
-    public String listAllLecturers() {
-        String list = "";
-        for (String lecturer : lecturers) {
-            list += lecturer + ", ";
-        }
-        return list;
-    }
-
-    public String listAllGrades() {
-        String list = "********************************\n";
-        int count = 0;
-        for (String assignment: assignments){
-            list += "Assignment: " + assignment + "\n Grade: " + grades[count] + "\n";
-            count++;
-        }
-        list+="***********************************";
-        return list;
-    }
-
-    public String toString() {
-        return "---------------------------------------\n" +"Date completed: " + dateCompleted + "\nModule Name: " + getName() + "\nModule code:"+ getCode() + "\nLecturers: " + listAllLecturers() + "\n" + listAllGrades() + "--------------------------------------" ;
-    }
-
-    public String findAssignment(String assignmentName){
-        String str = "";
-        for (String assignment: assignments)
-            if (assignment.contains(assignmentName))
-                str+=assignment;
-        return str;
-    }
-
-    public String findGrade(String assignmentName){
-        String str = "";
-        int count = 0;
-        for (String assignment:assignments) {
-            if (assignment.contains(assignmentName))
-                str+=grades[count];
-            count++;
-        }
-        return str;
     }
 }
