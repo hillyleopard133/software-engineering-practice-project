@@ -26,7 +26,7 @@ public class StudentTest {
         club4 = new Club("Drawing", "Drawing supplies are not provided");
         
         
-        student = new Student("John", 25, "Bsc Computing);
+        student = new Student("John", 25, "Bsc Computing");
         modules = new Module[3];
         modules[0] = new Module();
         modules[0].setName("Programming");
